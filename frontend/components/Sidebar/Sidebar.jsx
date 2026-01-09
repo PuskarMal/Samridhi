@@ -78,7 +78,7 @@ const Sidebar = () => {
                 <div className="flex items-center gap-2">
                     <button className="flex-1 py-3 px-4 flex items-center justify-center rounded-lg
                bg-primary-green hover:bg-secondary-green
-               text-white font-medium shadow-md transition" onclick="logAction('Register Animal')">
+               text-slate-800 font-medium shadow-md transition" onclick="logAction('Register Animal')">
                         <span data-i18n="register2">Register Animal</span>
                     </button>
                     <button className="text-xl opacity-70 hover:opacity-100" onClick="speakText('register2')"
@@ -89,7 +89,7 @@ const Sidebar = () => {
                 <div className="flex items-center gap-2">
                     <button className="flex-1 py-3 px-4 flex items-center justify-center rounded-lg
                bg-primary-green hover:bg-secondary-green
-               text-white font-medium shadow-md transition" onclick="logAction('Play Reminders')">
+               text-slate-800 font-medium shadow-md transition" onclick="logAction('Play Reminders')">
                         <span data-i18n="reminder">Identify / Scan Animal</span>
                     </button>
                     <button className="text-xl opacity-70 hover:opacity-100" onClick="speakText('reminder')"
