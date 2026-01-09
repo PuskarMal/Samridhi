@@ -1,15 +1,15 @@
 import React from 'react'
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; //sujit
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ImCheckmark } from "react-icons/im";
-
+import SpeakerButton from '../Speaker/Speaker'; //Sujit
 const Dashboard = () => {
     const fileInputRef = useRef(null);
     const [imageFile, setImageFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const navigate = useNavigate();
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation(); //sujit
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (!file) return;
@@ -34,10 +34,9 @@ const Dashboard = () => {
 
                     <div className="flex items-center gap-2">
                         <h1 className="text-2xl md:text-3xl font-bold text-gray-900" data-i18n="head">
-                            {t("head")}
+                            {t("head")}                         {/*Sujit*/}
                         </h1>
-                        <button className="opacity-70 text-xl hover:opacity-100" onclick="speakText('head')"
-                            title="Listen">🔊</button>
+                        <SpeakerButton textKey="head" />        {/*Sujit*/}
                     </div>
 
 
@@ -236,7 +235,7 @@ const Dashboard = () => {
                                     {t("newanimalregistered")}
                                 </p>
                                 <p class="text-xs text-gray-500">
-                                    {t("idtoday")}
+                                    C100669110
                                 </p>
                             </div>
                         </div>
@@ -248,7 +247,7 @@ const Dashboard = () => {
                                     {t("animalidentified")}
                                 </p>
                                 <p class="text-xs text-gray-500">
-                                    {t("idtoday")}
+                                    C100578424
                                 </p>
                             </div>
                         </div>
@@ -260,7 +259,7 @@ const Dashboard = () => {
                                     {t("genetictestcompleted")}
                                 </p>
                                 <p class="text-xs text-gray-500">
-                                    {t("idtoday")}
+                                    M500677384
                                 </p>
                             </div>
                         </div>
