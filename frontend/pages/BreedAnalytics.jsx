@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { data, useLocation } from "react-router-dom";
+import TopPrediction from "../components/Charts/TopPrediction";
 
 const BreedAnalytics = () => {
   const { state } = useLocation();
@@ -27,6 +28,7 @@ const BreedAnalytics = () => {
         );
         const breedDetails = await breedDetailsRes.json();
         setDetails(breedDetails);
+        
       } catch (err) {
         console.error("Prediction error:", err);
       } finally {
@@ -85,7 +87,7 @@ const BreedAnalytics = () => {
             <>
               <div>
                 <p className="text-xl font-bold text-primary-green">
-                  {result.breed}
+                  {result.top_predictions[0].breed}
                 </p>
                 <p className="text-sm text-gray-600">
                   Predicted Breed
@@ -96,13 +98,16 @@ const BreedAnalytics = () => {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span>Confidence</span>
-                  <span>{result.confidence}%</span>
+                  <span>{result.top_predictions[0].confidence}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
   <div
     className="h-3 bg-green-500 rounded-full transition-all"
-    style={{ width: `${result.confidence}%` }}
+    style={{ width: `${result.top_predictions[0].confidence}%` }}
   />
+  <div className="mt-4">
+    <TopPrediction predictions={result.top_predictions} />
+  </div>
 </div>
 
               </div>
